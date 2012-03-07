@@ -1,0 +1,98 @@
+button, input[type="checkbox"], input[type="radio"], input[type="text"] {
+	-webkit-appearance: none;
+	-webkit-margin-start: 2px;
+	-webkit-margin-end: 3px;
+	-webkit-transition: padding 100ms, height 100ms, opacity 100ms, border 500ms;
+}
+button {
+	background: #f2f2f2; /* #86ab66 */
+	border-radius: 3px;
+	border: 1px solid #bdbdbd; /* #424242 */
+	color: #424242;
+	cursor: default;
+	test-algin: center;
+	-webkit-box-align: center;
+	-webkit-aooearance: button;
+}
+button:hover, input[type="checkbox"]:hover, input[type="radio"]:hover, 
+input[type="text"]:focus {
+	border: 1px solid #97c074;
+	box-shadow: 0 0 3px #97c074; /* 2e9afe */
+}
+/* checkbox, radio */
+input[type="checkbox"], input[type="radio"] {
+	background: #f2f2f2;
+	border-radius: 3px;
+	border: 1px solid #a0a0a0;
+	display: inline-block;
+	height: 16px;
+	margin-top: 0;
+	margin-bottom: 0;
+	position: relative;
+	width: 16px;
+	box-shadow: inset 0 0px 2px #bdbdbd;
+}
+/* checkbox */
+input[type="checkbox"]:checked:before {
+	
+}
+/* radio */
+input[type="radio"] {
+	background: -webkit-linear-gradient(#f2f2f2, #e3e3e3);
+	border-radius: 100%;
+}
+input[type="radio"]:checked:before {
+	background: white;
+	border-radius: 100%;
+	box-shadow: 0 0 8px rgba(0, 0, 0, 0.5), 1px 1px 3px rgba(0, 0, 0, 0.32);
+	color: #808080;
+	content: "";
+	font-size: 13px;
+	height: 8px;
+	left: 3px;
+	position: absolute;
+	top: 3px;
+	width: 8px;
+	-webkit-user-select: none;
+}
+/* text */
+input[type="text"] {
+	border-radius: 3px;
+	border: 1px solid #bdbdbd;
+}
+input[type="text"]:focus {
+	outline: none;
+}
+/***********
+button type
+************/
+/* ok */
+.btn_ok {
+	background: #85aa67;
+	border: 1px solid #85aa67;
+	color: #fff;
+}
+/* delete */
+.btn_delOrCancel {
+	background: #db4d4c;
+	border: 1px solid #db4d4c;
+	color: #fff;
+}
+.btn_delOrCancel:hover {
+	border: 1px solid #db4d4c;
+	box-shadow: 0 0 3px #db4d4c;
+}
+/* save */
+.btn_save {
+	background: #49b4d4;
+	border: 1px solid #49b4d4;
+	color: #fff;
+}
+.btn_save:hover {
+	border: 1px solid #49b4d4;
+	box-shadow: 0 0 3px #49b4d4;
+}
+/* onClick */
+button:active, .btn_save:active, .btn_delOrCancel:active {
+	box-shadow: inset 0px 0px 8px rgba(0, 0, 0, 0.2);
+}

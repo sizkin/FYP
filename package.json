@@ -1,0 +1,10 @@
+{
+	"name": "fyp_test",
+	"version": "0.0.1",
+	"dependencies": {
+		"express": "2.5.8",
+		"jade": "0.20.3",
+		"socket.io": "0.8.7",
+		"fusker": "0.2.1"
+	}
+}
