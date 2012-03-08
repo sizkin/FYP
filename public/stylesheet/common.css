@@ -10,7 +10,7 @@ button {
 	border: 1px solid #bdbdbd; /* #424242 */
 	color: #424242;
 	cursor: default;
-	test-algin: center;
+	text-align: center;
 	-webkit-box-align: center;
 	-webkit-aooearance: button;
 }
@@ -30,11 +30,18 @@ input[type="checkbox"], input[type="radio"] {
 	margin-bottom: 0;
 	position: relative;
 	width: 16px;
-	box-shadow: inset 0 0px 2px #bdbdbd;
+	box-shadow: inset 0 0 2px #bdbdbd;
 }
 /* checkbox */
 input[type="checkbox"]:checked:before {
-	
+	color: gray;
+    content: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAKCAYAAABi8KSDAAAAmElEQVR42nXQMQ6EIBAFUI5OQ6TwHibacAIaIx4AbbiAtQGk429wg8lEKX4xzJswwAA0s64rpmlCrZvQGAPO+Z1xHPFgay1Ks8JlWQp6IqWEcw5s33cIIe7DeZ5LXvA4DqSUwPq+J80veF3Xf41t29B1XRPGGOkDtdafMIRwQ4LLNcMwEOi9J5B8Xc4ZSqkmrJgMnOdZ4Ss/HaFLUf+pI9MAAAAASUVORK5CYII=');
+    font-size: 13px;
+    height: 10px;
+    left: 2px;
+    position: absolute;
+    width: 10px;
+    -webkit-user-select: none;
 }
 /* radio */
 input[type="radio"] {
@@ -94,5 +101,5 @@ button type
 }
 /* onClick */
 button:active, .btn_save:active, .btn_delOrCancel:active {
-	box-shadow: inset 0px 0px 8px rgba(0, 0, 0, 0.2);
+	box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.2);
 }
