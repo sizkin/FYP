@@ -6,7 +6,8 @@ var http = require('http');
 //
 
 // global var
-var port = process.env.C9_PORT || 3000;
+var port = process.env.C9_PORT || 3000,
+    serInfo = [];
 
 // mongodb connection
 //var Db = require('mongodb').Db,
@@ -31,15 +32,18 @@ app.configure(function() {
 	}
 });
 
+getSerInfo(serInfo);
+console.log(serInfo);
+
 app.get('/', function(req, res) {
-	res.render('index', {
-		title: 'WAF System'
-	});
+    res.render('index', {
+    	title: 'WAF System',
+        serInfo: serInfo
+	});   
 });
 
 // Set the params for request
 app.param('urlT');
-app.param('host');
 
 app.get('/:urlT', function(req, res) {
 	var urlT = req.params.urlT;
@@ -48,16 +52,20 @@ app.get('/:urlT', function(req, res) {
 	});
 });
 
-// Get the informations of Server
-var options = {
-    host: 'www.apache.org',
-    port: 80,
-    path: '/'
-};
-http.get(options, function(req) {
-    var serverName = req.header('Server');
-    console.log(serverName);
-});
+function getSerInfo(serInfo) {
+    // Get the informations of Server
+    var options = {
+        host: 'www.apache.org',
+        port: 80,
+        path: '/'
+    };
+    // response
+    http.get(options, function(res) {
+        serInfo.server = res.header('Server');
+    });
+    
+    return serInfo;
+}
 
 app.listen(port);
 console.log('Server is running');

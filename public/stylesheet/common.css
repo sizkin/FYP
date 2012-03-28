@@ -70,9 +70,9 @@ input[type="text"] {
 input[type="text"]:focus {
 	outline: none;
 }
-/***********
-button type
-************/
+/************
+ button type 
+*************/
 /* ok */
 .btn_ok {
 	background: #85aa67;
@@ -102,4 +102,16 @@ button type
 /* onClick */
 button:active, .btn_save:active, .btn_delOrCancel:active {
 	box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.2);
+}
+/***********
+ board
+************/
+.board {
+    background: #BDBDBD;
+    border: 1px solid #ffffff;
+    color: #FAFAFA;
+    padding: 3px 3px;
+}
+.board header {
+    color: #363636;
 }

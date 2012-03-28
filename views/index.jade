@@ -1,18 +1,20 @@
-div#menu
-	aside
-		section
-			ul
-				li
-					|Home
-				li
-					|About			
+section
+    div#menu
+        aside
+            section
+                ul
+                    li
+                        |Home
+                    li
+                        |Traffic Monitor			
 
-div#content
-	article
-		header
-			h1 Welcome to WAF System
-		p
-		| Here is the web application firewall. 
-		| It is used to detecting, protecting and analyzing your server.
-		footer
-		| 2012.02.08
+    div#content
+        article
+            header
+                h1 Welcome to WAF System
+        article.board
+            header
+                h1
+                    strong 
+                        |Server Informations
+            |Server: #{serInfo.server}
