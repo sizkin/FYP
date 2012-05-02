@@ -3,11 +3,17 @@ var express = require('express'),
 var http = require('http');
 
 // custom module
-//
+var configs = require('./config').configs;
 
 // global var
-var port = process.env.C9_PORT || 3000,
+var port = configs.port,
+    adminUser = {},
     serInfo = [];
+
+    adminUser = {
+        'username': configs.root,
+        'password': configs.password
+    };
 
 // mongodb connection
 //var Db = require('mongodb').Db,
@@ -37,8 +43,8 @@ console.log(serInfo);
 
 app.get('/', function(req, res) {
     res.render('index', {
-    	title: 'WAF System',
-        serInfo: serInfo
+        title: 'WAF System',
+        user: adminUser
 	});   
 });
 
@@ -48,7 +54,9 @@ app.param('urlT');
 app.get('/:urlT', function(req, res) {
 	var urlT = req.params.urlT;
 	res.render(urlT, {
-		title: 'WAF System - ' + urlT
+        title: 'WAF System - ' + urlT,
+        url: urlT,
+        serInfo: serInfo
 	});
 });
 
