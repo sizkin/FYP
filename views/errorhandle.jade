@@ -1,0 +1,11 @@
+div#errMsg.span4
+    div.alert.alert-block
+        h3.alert-heading
+            span.label.label-warning
+                |Warning!
+        case err
+            when 'nologin'
+                p
+                    |Please log in first!&nbsp;&nbsp;
+                    a(href='/', title='return') return
+        

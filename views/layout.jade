@@ -14,7 +14,7 @@ html
             h1 FYP WAF System
         div.container
             div.row
-                - if (typeof currentUser !== 'undefined')
+                - if (typeof session.currentUser !== 'undefined')
                     // sidebar menu
                     div.span2
                         div.side
@@ -24,18 +24,23 @@ html
                                         li.nav-header
                                             |Menu
                                         li.active
-                                            a(href='/')
+                                            a(href='/home')
                                                 i.icon-home
                                                 |Home
                                         li.nav-header
                                             |Applications
                                         li
-                                            a(href='')
+                                            a(href='/trafficm')
+                                                i.icon-th-list
                                                 |Traffic Monitor
                                         li
-                                            |Settings
+                                            a(href='/setting')
+                                                i.icon-cog
+                                                |Settings
                                         li
-                                            |Log Out
+                                            a(href='/logout')
+                                                i.icon-off
+                                                |Log Out
                                         li.divider
                                         li
                                             |Help		

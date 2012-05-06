@@ -1,19 +1,15 @@
+/**
+ * Module dependencies.
+ */
 var express = require('express'),
 	app = module.exports = express.createServer();
-var http = require('http');
 
 // custom module
 var configs = require('./config').configs;
 
 // global var
-var port = configs.port,
-    adminUser = {},
-    serInfo = [];
-
-    adminUser = {
-        'username': configs.root,
-        'password': configs.password
-    };
+var host = configs.host,
+    port = configs.port;
 
 // mongodb connection
 //var Db = require('mongodb').Db,
@@ -25,10 +21,17 @@ var port = configs.port,
 //var db = new Db('fyp', new Server('localhost', 27017, {}, {}));
 // End mongodb connection
 
+/**
+ * Application Configuration
+ */
 app.configure(function() {
 	try {
 		app.use(express.methodOverride());
-		app.use(express.bodyParser());
+        app.use(express.bodyParser());
+        app.use(express.cookieParser());
+        app.use(express.session({
+            secret: 'fypgroup10'
+        }));
 		app.set('view engine', 'jade');
 		app.set('views', __dirname + '/views');
 		app.use(express.static(__dirname + '/public'));
@@ -38,42 +41,16 @@ app.configure(function() {
 	}
 });
 
-getSerInfo(serInfo);
-console.log(serInfo);
-
-app.get('/', function(req, res) {
-    res.render('index', {
-        title: 'WAF System',
-        user: adminUser
-	});   
+app.dynamicHelpers({
+    session: function(req, res) {
+        return req.session;
+    }
 });
 
-// Set the params for request
-app.param('urlT');
+// Page Routes
+require('./routes')(app);
 
-app.get('/:urlT', function(req, res) {
-	var urlT = req.params.urlT;
-	res.render(urlT, {
-        title: 'WAF System - ' + urlT,
-        url: urlT,
-        serInfo: serInfo
-	});
-});
-
-function getSerInfo(serInfo) {
-    // Get the informations of Server
-    var options = {
-        host: 'www.apache.org',
-        port: 80,
-        path: '/'
-    };
-    // response
-    http.get(options, function(res) {
-        serInfo.server = res.header('Server');
-    });
-    
-    return serInfo;
-}
-
-app.listen(port);
+app.listen(port, host);
 console.log('Server is running');
+
+module.exports = app;

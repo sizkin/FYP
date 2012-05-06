@@ -1,4 +1,11 @@
-/* To fix style */
+/*****************
+ * To fix style 
+ *****************/
+/* Error, warning message */
+#errMsg {
+    font-size: 20px;
+    -webkit-margin-start: 45%;
+}
 /* side and menu */
 .side {
     background: #fefefe;
@@ -14,15 +21,30 @@
     text-align: end;
     -webkit-user-select: none;
 }
+#menu .nav-list > .active > a {
+    background-color: #c4c9cf;
+}
+#menu .nav-list > .active > a:hover {
+    background-color: #EEE;
+}
 #menu .nav-list > .active > a,
 #menu .nav-list > .active > a:hover {
-    background-color: #f6f7f9;
-    border-left: 20px solid #c4c9cf;
     color: #000000;
     cursor: pointer;
-    font-weight: bold;    
+    font-weight: bold;
 }
-/* content */
+
+/**
+ * content 
+ **/
+#login {
+    -webkit-margin-start: 45%;
+}
+#btnLogin {
+    margin-top: -10px;
+    margin-left: 18px;
+}
+
 /* discriptions */
 #content .dl-horizontal > dt {
     border-right: 1px solid #e0e0e0;

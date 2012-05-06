@@ -1,13 +1,10 @@
-div.span4
+div#login.span4
     div.page-header
         h3 Login
     form.well(method='post', action='/login')
         lable
-            |username:
-        input(type='text', name='username', placeholder='USERNAME')
+            input(type='text', name='username', placeholder='USERNAME')
         br
         lable
-            |password:
-        input(type='password', name='password', placeholder='PASSWORD')
-        br
-        button(type='submit', class='btn') Log In
+            input(type='password', name='password', placeholder='PASSWORD')
+        button(type='submit', id='btnLogin', class='btn') Log In

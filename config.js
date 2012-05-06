@@ -1,6 +1,6 @@
 exports.configs = {
-    "host"      : "localhost",
+    "host"      : "218.103.210.61",
     "port"      : "81",
     "root"      : "admin",
-    "passowrd"  : "password"
+    "password"  : "password"
 };
