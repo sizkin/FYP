@@ -8,13 +8,13 @@ html
         link(rel='stylesheet', type='text/css', href='stylesheet/main.css')
         link(rel='stylesheet', type='text/css', href='stylesheet/bootstrap.css')
         link(rel='stylesheet', type='text/css', href='stylesheet/bootstrap-responsive.css')
-        title #{title}
+        title Web Security Platform -  #{title}
     body
         div.page-header
-            h1 FYP WAF System
+            h1 Web Security Platform
         div.container
             div.row
-                - if (typeof session.currentUser !== 'undefined')
+                - if (typeof session.currentUser !== 'undefined' && title !== 'Message')
                     // sidebar menu
                     div.span2
                         div.side
@@ -30,13 +30,9 @@ html
                                         li.nav-header
                                             |Applications
                                         li
-                                            a(href='/trafficm')
+                                            a(href='/stat')
                                                 i.icon-th-list
-                                                |Traffic Monitor
-                                        li
-                                            a(href='/setting')
-                                                i.icon-cog
-                                                |Settings
+                                                |System Monitor
                                         li
                                             a(href='/logout')
                                                 i.icon-off
